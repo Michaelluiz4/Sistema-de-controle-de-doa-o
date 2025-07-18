@@ -1,9 +1,9 @@
-from menu import Menu
+from product_registration import ProductRegistration
 
 def main():
     # program initializer
-    menu = Menu()
-    menu.chosen_option()
+    product_registration = ProductRegistration()
+    product_registration.chosen_option()
 
 if __name__ == "__main__":
     main()
