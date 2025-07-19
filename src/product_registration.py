@@ -34,6 +34,7 @@ class ProductRegistration:
         new_id = last_id + 1
 
         self.products.append({"id": new_id, "name": name, "price": price})
+        self.save_products_txt()
         print(f"\033[32mProduct '{name}' registered successfully.\033[0m")
 
     def list_products(self):
@@ -86,7 +87,7 @@ class ProductRegistration:
                             "price": float(parts[2]),
                         }
                         self.products.append(product)
-        except FileExistsError:
+        except FileNotFoundError:
             self.products = []
 
     def chosen_option(self):
