@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Sistema de Doações</h1>
+        <p>Gerencie e acompanhe doações de forma simples e organizada.</p>
+
+        <a href="{{ url_for('register_donate') }}"><button>Registrar Doação</button></a>
+        <a href="{{ url_for('donations') }}"><button>Ver Doações</button></a>
+
+        <h2>Estatísticas das Doações</h2>
+        
+        <div class="grafico">
+            <h3>Quantidade por Produto</h3>
+            <canvas id="grafico_produtos"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h3>Quantidade por Categoria</h3>
+            <canvas id="grafico_categorias"></canvas>
+        </div>        
+    </div>    
+
+    <script>      
+        // Gráfico de barras - Produtos
+        const labelsProdutos = JSON.parse('{{ labels_produtos | tojson | safe }}');
+        const valoresProdutos = JSON.parse('{{ valores_produtos | tojson | safe }}');
+
+        const ctxProdutos = document.getElementById('grafico_produtos').getContext('2d');
+        new Chart(ctxProdutos, {
+            type: 'bar',
+            data: {
+                labels: labelsProdutos,
+                datasets: [{
+                    label: 'Quantidade de Itens',
+                    data: valoresProdutos,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Gráfico de pizza - Categorias
+        const labelsCategorias = JSON.parse('{{ labels_categorias | tojson | safe }}');
+        const valoresCategorias = JSON.parse('{{ valores_categorias | tojson | safe }}');
+
+        const ctxCategorias = document.getElementById('grafico_categorias').getContext('2d');
+        new Chart(ctxCategorias, {
+            type: 'pie',
+            data: {
+                labels: labelsCategorias,
+                datasets: [{
+                    data: valoresCategorias,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>

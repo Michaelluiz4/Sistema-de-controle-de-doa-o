@@ -1,0 +1,166 @@
+/* Reset básico e fonte */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+body {
+  padding: 20px;
+  background: #eef2f7;
+}
+
+/* Container geral */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho */
+h1, h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+form label {
+  flex: 1 1 100%;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+/* Botão */
+button {
+  background-color: #2980b9;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1c5980;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #2980b9;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f7fc;
+}
+
+/* Links de navegação */
+nav {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1c5980;
+}
+
+/* Mensagem de sucesso ou erro */
+.message {
+  margin: 15px 0;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.message.error {
+  background-color: #c0392b;
+  color: white;
+}
+
+.grafico {
+  width: 45%;
+  display: inline-block;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+button.danger {
+    background-color: #dc3545;
+}
+
+button.danger:hover {
+    background-color: #c82333;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Doações</title> 
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Doações</h1>
+
+        <!-- verifica se já existe doação registrada para exibir a tabela. -->
+        {% if donations %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantidade</th>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- loop para exibir cada doação. -->
+                {% for donation in donations %}
+                <tr>
+                    <td>{{ donation.item }}</td>
+                    <td>{{ donation.quantidade }}</td>
+                    <td>{{ donation.tipo }}</td>
+                    <td>{{ donation.data }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- caso não haja nenhuma doação registrada. -->
+        {% else %}
+        <p>Nenhuma doação registrada ainda.</p>
+        {% endif %}
+
+        <form action="{{ url_for('reset_all') }}" method="POST" style="margin-top: 20px;">
+            <button type="submit" class="danger">Apagar todos os itens registrados</button>
+        </form>
+
+        <form action="{{ url_for('reset_category') }}" method="POST" style="margin-top: 20px;">
+            <label for="categoria">Apagar por Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="">Selecione</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Alimentos não perecíveis">Alimentos não perecíveis</option>
+                <option value="Alimentos perecíveis">Alimentos perecíveis</option>
+                <option value="Brinquedos">Brinquedos</option>
+                <option value="Higiene Pessoal">Higiene Pessoal</option>
+                <option value="Material Escolar">Material Escolar</option>
+                <option value="Calcados">Calçados</option>
+                <option value="Utensilios Domestico">Utensílios Doméstico</option>
+                <option value="Livros">Livros</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <button type="submit" class="danger">Apagar itens da categoria selecionada</button>
+        </form>
+        <br>
+        <a href="{{ url_for('home') }}"><button>Voltar</button></a>
+        <a href="{{ url_for('register_donate') }}"><button>Registrar nova doação</button></a>
+    </div>
+</body>
+</html>
