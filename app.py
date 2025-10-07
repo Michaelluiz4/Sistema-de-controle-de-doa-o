@@ -144,4 +144,4 @@ def reset_category():
 if __name__ == "__main__":
     # garante que o app será executado apenas se esse for o arquivo principal.
     init_db() # inicializa o banco de dados.
-    app.run(debug=True) # inicializa o servidor Flask.
+    app.run(debug=True) # inicializando o servidor Flask.
