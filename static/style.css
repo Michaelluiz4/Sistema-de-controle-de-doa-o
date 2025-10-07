@@ -131,16 +131,19 @@ nav a:hover {
   text-align: center;
 }
 
+/* estilo da mensagem de sucesso */
 .message.success {
   background-color: #27ae60;
   color: white;
 }
 
+/* estilo da mensagem de erro */
 .message.error {
   background-color: #c0392b;
   color: white;
 }
 
+/* estilo para os graficos lado a lado */
 .grafico {
   width: 45%;
   display: inline-block;
