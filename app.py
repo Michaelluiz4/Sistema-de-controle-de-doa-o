@@ -111,7 +111,12 @@ def donations():
 
     # transforma os dados em lista de dicionários para facilitar o uso no template HTML.
     donations_data = [
-        {"item": d[0], "quantidade": d[1], "tipo": d[2], "data": d[3]}
+        {
+            "item": d[0], 
+            "quantidade": d[1], 
+            "tipo": d[2], 
+            "data": datetime.strptime(d[3], "%Y-%m-%d").strftime("%d/%m/%Y")
+        }
         for d in donations_list
     ]
 
