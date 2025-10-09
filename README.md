@@ -20,3 +20,7 @@ registro.
 ### Página Inicial
 Gráficos da quantidade por produto e por categoria.
 ![Página Inicial](img/pagina_inicial.png)
+
+### Registro de doações
+Formulário para cadastrar produtos com nome, quantidade, categoria
+![Registro de Doações](img/registrar_doação.png)
