@@ -28,6 +28,6 @@ Formulário para cadastrar produtos com nome, quantidade, categoria.
 ![Registro de Doações](img/registrar_doação.png)
 
 ### Categorias disponíveis para Registro
-Categorias de disponíveis para seleção ao registrar produto.
+Categorias disponíveis para seleção ao registrar produto.
 
 ![Categorias disponíveos para Registro](img/categorias_para_registro.png)
