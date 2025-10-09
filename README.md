@@ -19,4 +19,4 @@ registro.
 
 ### Página Inicial
 Gráficos da quantidade por produto e por categoria.
-![Página Inicial] (C:\Users\m-lui\OneDrive\Imagens\Atividade Extensão\pagina inicial.png)
+![Página Inicial]
