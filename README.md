@@ -19,4 +19,4 @@ registro.
 
 ### Página Inicial
 Gráficos da quantidade por produto e por categoria.
-![Página Inicial]
+![Página Inicial](img/pagina_inicial.png)
