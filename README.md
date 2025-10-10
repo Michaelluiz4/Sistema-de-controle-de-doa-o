@@ -62,24 +62,36 @@ Categorias disponíveis para seleção ao excluir itens de uma categoria especí
     ```
 
 2. Acesse a pasta do projeto:
-cd Sistema-de-controle-de-doa-o
+    ```bash
+    cd Sistema-de-controle-de-doa-o
+    ```
 
 3. Crie e ative um ambiente virtual:
-python -m venv venv
+    ```bash
+    python -m venv venv
+    ```
     - No Windows:
+    ```bash
     venv\Scripts\activate
+    ```
 
     - No macOS/Linux:
+    ```bash
     source venv/bin/activate
+    ```
 
 4. Instale as dependências:
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ### Execução
 
 1. Execute o Sistema:
-python app.py
-
+    ```bash
+    python app.py
+    ```
+    
 2. Acesse no Navegador:
 http://localhost:5000
 
