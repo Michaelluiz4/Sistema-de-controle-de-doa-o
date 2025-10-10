@@ -40,7 +40,7 @@ Tabela com os produtos cadastrados e seus respectivos dados.
 ### Botões de Exclusão
 Botões para exclusão por categoria ou de todos os itens.
 
-![Botões de Exclusão](img/botoes_de_exclusão.png)
+![Botões de Exclusão](img/botoes_de_exclusao.png)
 
 ### Categorias disponíveis para exclusão
 Categorias disponíveis para seleção ao excluir itens de uma categoria específica.
