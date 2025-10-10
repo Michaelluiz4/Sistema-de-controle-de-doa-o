@@ -1,3 +1,4 @@
+# importar os módulos
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 import sqlite3
@@ -9,9 +10,9 @@ DB_NAME = "donations.db" # nome do banco de dados
 
 def init_db():
     # função para inicializar o banco de dados.
-    if not os.path.exists(DB_NAME): # se o banco de dado não existir, ele irá ser criado.
+    if not os.path.exists(DB_NAME): # se o banco de dados não existir, ele irá ser criado.
         conn = sqlite3.connect(DB_NAME) # conectar ao banco de dados.
-        cursor = conn.cursor()
+        cursor = conn.cursor() # criar cursor.
         cursor.execute("""
             CREATE TABLE donations (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -53,7 +54,7 @@ def home():
         valores_produtos=valores_produtos,
         labels_categorias=labels_categorias,
         valores_categorias=valores_categorias
-    ) # renderiza a página inicial com os dados de produtos e categorias paara exibição.
+    ) # renderiza a página inicial com os dados de produtos e categorias para exibição.
 
 
 @app.route("/register_donate", methods=["GET", "POST"])
@@ -61,12 +62,12 @@ def register_donate():
     # Página de registro de doações
     if request.method == "POST":
         # verifica se a requisição é do tipo POST. 
-        item = request.form["item"].strip().capitalize()
-        quantidade = int(request.form["quantidade"])
-        tipo = request.form["tipo"]
+        item = request.form["item"].strip().capitalize() # obtém o item digitado no HTML, remove espaços e capitaliza.
+        quantidade = int(request.form["quantidade"]) # obtém a quantidade digitado no HTML e converte para inteiro.
+        tipo = request.form["tipo"] # obtém a categoria que selecionada no HTML.
 
         conn = sqlite3.connect(DB_NAME) # conecta ao banco de dados.
-        cursor = conn.cursor()
+        cursor = conn.cursor() # criar cursor.
 
         # verifica se já existe o mesmo item e tipo no banco de dados.
         cursor.execute("""
@@ -143,7 +144,7 @@ def reset_category():
     cursor.execute("DELETE FROM donations WHERE tipo = ?", (categoria,)) # deletar item de uma categoria específica.
     conn.commit() # salvar alterações.
     conn.close() # fechar conexão com o banco de dados.
-    return redirect(url_for("donations")) # redirecionar para a página donations
+    return redirect(url_for("donations")) # redirecionar para a página donations.
 
 
 if __name__ == "__main__":
