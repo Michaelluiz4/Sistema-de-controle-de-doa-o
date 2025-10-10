@@ -80,7 +80,7 @@ pip install -r requirements.txt
 1. Execute o Sistema:
 python app.py
 
-2. Acesse o Navegador:
+2. Acesse no Navegador:
 http://localhost:5000
 
 ## Tecnologias utilizadas
