@@ -23,7 +23,6 @@ function generateChartsProducts() {
 }
 
 function generateChartsCategory() {
-
     // Gráfico de pizza - Categorias
     const ctxCategorias = document.getElementById('grafico_categorias').getContext('2d');
     new Chart(ctxCategorias, {
