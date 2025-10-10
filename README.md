@@ -25,9 +25,24 @@ Gráficos da quantidade por produto e por categoria.
 ### Registro de Doações
 Formulário para cadastrar produtos com nome, quantidade, categoria.
 
-![Registro de Doações](img/registrar_doação.png)
+![Registro de Doações](img/registrar_doacao.png)
 
 ### Categorias disponíveis para Registro
-Categorias disponíveis para seleção ao registrar produto.
+Categorias disponíveis para seleção ao registrar um produto.
 
-![Categorias disponíveos para Registro](img/categorias_para_registro.png)
+![Categorias disponíveis para Registro](img/categorias_para_registro.png)
+
+### Visualização dos Itens
+Tabela com os produtos cadastrados e seus respectivos dados.
+
+![Visualização dos Itens](img/doacoes_registradas.png)
+
+### Botões de Exclusão
+Botões para exclusão por categoria ou de todos os itens.
+
+![Botões de Exclusão](img/botoes_de_exclusão.png)
+
+### Categorias disponíveis para exclusão
+Categorias disponíveis para seleção ao excluir itens de uma categoria específica.
+
+![Categoria disponíveis para exclusão](img/categorias_de_exclusao.png)
